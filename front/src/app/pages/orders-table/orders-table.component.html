@@ -1,0 +1,59 @@
+<div class="mat-elevation-z8 small-table">
+  <table #table mat-table class="full-width-table" matSort aria-label="Elements">
+    
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nameEqui">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom Equipement</th>
+      <td mat-cell *matCellDef="let row">{{row.nameEqui}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="codeEqui">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Code Equipement</th>
+      <td mat-cell *matCellDef="let row">{{row.codeEqui}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="probleme">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Problem</th>
+      <td mat-cell *matCellDef="let row">{{row.probleme}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="departement">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Departement</th>
+      <td mat-cell *matCellDef="let row">{{row.departement}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="checkbox">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Etat</th>
+      <td mat-cell *matCellDef="let row">
+        <input type="checkbox" [checked]="row.resolved">
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>

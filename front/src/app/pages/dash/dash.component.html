@@ -1,0 +1,22 @@
+
+<!--Charts-->
+<mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+   <app-card title="Monthly demandResolved">
+       <app-annual-demande-resolved-chart></app-annual-demande-resolved-chart>
+   </app-card>
+</mat-grid-tile>
+<mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+   <app-card title="demandes">
+       <app-demandes-chart></app-demandes-chart>
+   </app-card>
+</mat-grid-tile>
+<mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+   <app-card title="demandResolved Traffic Source">
+       <app-demande-resolved-traffic-chart></app-demande-resolved-traffic-chart>
+   </app-card>
+</mat-grid-tile>
+<mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+   <app-card title="Equipement Sessions by Traffic Source">
+       <app-equipement-att-sessions-chart></app-equipement-att-sessions-chart>
+   </app-card>
+</mat-grid-tile>

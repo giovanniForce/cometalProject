@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="name">
+            Nom du demandeur
+          </label>
+          <input type="text" id="name" class="form-control" name="name" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="nameEqui">
+              Nom de l'équipement
+            </label>
+            <input type="text" id="nameEqui" class="form-control" name="nameEqui" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="codeEqui">
+              CodeEqui
+            </label>
+            <input type="number" id="codeEqui" class="form-control" name="codeEqui" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="probleme">
+              Problème rencontré
+            </label>
+            <input type="text" id="probleme" class="form-control" name="probleme" ngModel>
+          </div>
+        <div class="form-group">
+          <label for="departement">
+            Département
+          </label>
+          <select id="departement" class="form-control" name="departement" ngModel>
+            <option value="prepa">Préparateur</option>
+            <option value="ing">Ingénieur</option>
+            <option value="compta">Comptabilité</option>
+            <option value="qhse">QHSE</option>
+            <option value="atelier">Atélier</option>
+            <option value="direc">Direction</option>
+            <option value="qhse">Production</option>
+            <option value="atelier">Commercial</option>
+            <option value="direc">Achat</option>
+            <option value="direc">Autre</option>
+
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Enregistrer</button> </form>
+    </div>
+  </div>
