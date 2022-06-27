@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="name_equi">
+            Nom de l'équipement
+          </label>
+          <input type="text" id="name_equi" class="form-control" name="name_equi" ngModel>
+        </div>
+        
+        <div class="form-group">
+            <label for="etat">
+              état de l'équipement
+            </label>
+            <select id="etat" class="form-control" name="etat" ngModel>
+                <option value="true">Utilisable</option>
+                <option value="false">Inutilisable</option>
+              </select>     
+         </div>
+
+          <div class="form-group">
+            <label for="codeEqui">
+              CodeEqui
+            </label>
+            <input type="number" id="codeEqui" class="form-control" name="codeEqui" ngModel>
+          </div>
+
+          <div class="form-group">
+            <label for="quantite">
+              quantite à ajouter
+            </label>
+            <input type="number" id="quantite" class="form-control" name="quantite" ngModel>
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Enregistrer</button></form>
+        </div>
+    </div>
+  
